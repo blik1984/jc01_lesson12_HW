@@ -24,10 +24,7 @@ public class CalculatorSimpleNumbers {
 		}
 
 		number = sc.nextInt();
-				if (number < 2) {
-			System.out.println("Число " + number + " не является простым");
-			return;
-		}
+				
 		if (checkSipleNumber(number)) {
 			System.out.println("Число " + number + " является простым");
 			summ = summSimpleNumberBeforeThis(number);
@@ -39,6 +36,10 @@ public class CalculatorSimpleNumbers {
 	}
 
 	public static boolean checkSipleNumber(int number) {
+		if (number < 2) {
+			System.out.println("Число " + number + " не является простым");
+			return false;
+		}
 		int area = (int) Math.sqrt(number);
 		for (int i = 2; i <= area; i++) {
 			if (number % i == 0) {
